@@ -131,5 +131,8 @@ dmypy.json
 # data
 data/
 
+# docker volume
+ny_taxi_db/
+
 # DS_store
 .DS_Store
