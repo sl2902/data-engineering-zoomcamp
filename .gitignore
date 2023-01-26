@@ -134,5 +134,14 @@ data/
 # docker volume
 ny_taxi_db/
 
+# service account
+data-eng-375913*
+
+#terraform
+hw1/terraform/.terraform/*
+hw1/terraform/terraform.tfstate
+hw1/terraform/terraform.tfstate.backup
+hw1/terraform/.terraform/terraform.tfstate
+
 # DS_store
 .DS_Store
