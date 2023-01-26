@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pgcli = "*"
+psycopg = {extras = ["binary"], version = "*"}
+pandas = "*"
+jupyter = "*"
+ipykernel = "*"
+sqlalchemy = "*"
+psycopg2-binary = "*"
+pyodbc = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
