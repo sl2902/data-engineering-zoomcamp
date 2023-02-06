@@ -133,6 +133,7 @@ data/
 
 # docker volume
 ny_taxi_db/
+hw2/ny_taxi_db/
 
 # service account
 data-eng-375913*
