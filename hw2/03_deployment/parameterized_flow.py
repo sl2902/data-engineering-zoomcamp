@@ -12,7 +12,6 @@ from datetime import timedelta
 @task(name="Fetch data", log_prints=True)
 def fetch(url: str) -> pd.DataFrame:
      """Read data from web into pandas DataFrame"""
-     print(f"Number of rows {df.shape[0]}")
      return pd.read_csv(url)
 
 @task(name="Clean data", log_prints=True)
@@ -24,6 +23,7 @@ def clean(df: pd.DataFrame) -> pd.DataFrame:
     elif "tpep_pickup_datetime" in df.columns:
         df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
         df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
+    print(f"Number of rows {df.shape[0]}")
     return df
 
 @task(
