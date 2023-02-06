@@ -1,0 +1,65 @@
+###
+### A complete description of a Prefect Deployment for flow 'Parent flow'
+###
+name: github-flow
+description: Parent flow
+version: a04e22800ca2c5673146f2962be2eec1
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+tags: []
+parameters: {}
+schedule: null
+infra_overrides: {}
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: Parent flow
+manifest_path: null
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  _block_document_id: 3624a57c-d2e2-436f-8e66-5b4184e32adf
+  _block_document_name: anonymous-815f327b-9616-42b9-9555-b7483d54822c
+  _is_anonymous: true
+  block_type_slug: process
+  _block_type_slug: process
+storage:
+  repository: https://github.com/sl2902/data-engineering-zoomcamp
+  reference: null
+  access_token: null
+  _block_document_id: 7686b4c5-ee29-441f-a10d-18c33ca26458
+  _block_document_name: de-github
+  _is_anonymous: false
+  block_type_slug: github
+  _block_type_slug: github
+path: ''
+entrypoint: parameterized_flow.py:etl_parent_flow
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    color:
+      title: color
+      position: 0
+      type: string
+    year:
+      title: year
+      position: 1
+      type: integer
+    months:
+      title: months
+      position: 2
+      type: array
+      items:
+        type: integer
+  required:
+  - color
+  - year
+  - months
+  definitions: null
