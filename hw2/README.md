@@ -1,3 +1,7 @@
+Log output for Q2
+
+<img width="1110" alt="image" src="https://user-images.githubusercontent.com/7212518/217333598-ea392c42-26e6-43e5-a383-5d618b2344c5.png">
+
 Command to build deployment from GitHub Storage Block
 
 Run from the root of the repo
