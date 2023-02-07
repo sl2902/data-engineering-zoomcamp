@@ -1,3 +1,9 @@
+Command to build deployment from GitHub Storage Block
+
+Run from the root of the repo
+
+prefect deployment build hw2/03_deployment/parameterized_flow.py:etl_parent_flow --name github-flow -sb github/de-github/hw2/03_deployment/ -o hw2/03_deployment/etl_parent_flow-deployment.yaml --apply
+
 Output of deployment for Q4
 
 <img width="1511" alt="image" src="https://user-images.githubusercontent.com/7212518/217326585-b4fac6d5-6c36-40a4-bf3b-5c1098787e71.png">
