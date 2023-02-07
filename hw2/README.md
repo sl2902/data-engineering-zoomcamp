@@ -9,6 +9,7 @@ Output of deployment for Q5 with Slack notification enabled
 <img width="1521" alt="image" src="https://user-images.githubusercontent.com/7212518/217328194-87047531-8057-41c0-8c0c-eac97d7fdbf7.png">
 
 
+[Create Slack app to get the webhook](https://api.slack.com/messaging/webhooks)
 
 Successful notification on Slack
 
