@@ -29,8 +29,8 @@ def clean(df: pd.DataFrame) -> pd.DataFrame:
 @task(
     name="Persist data locally", 
     log_prints=True, 
-    cache_key_fn=task_input_hash, 
-    cache_expiration=timedelta(days=1)
+#    cache_key_fn=task_input_hash, 
+#    cache_expiration=timedelta(days=1)
 )
 def write_local(df: pd.DataFrame, color: str, dataset_file: str) -> Path:
     """Write DataFrame out locally as parquet file"""
