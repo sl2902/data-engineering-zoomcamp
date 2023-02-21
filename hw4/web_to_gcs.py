@@ -97,7 +97,14 @@ def web_to_gcs(year, service):
                 df = pd.read_csv(dataset_url, low_memory=False, dtype=green_schema_dict)
             elif service == "yellow":
                 df = pd.read_csv(dataset_url, low_memory=False, dtype=yellow_schema_dict)
+            elif service == "fhv":
+                df["pickup_datetime"] = pd.to_datetime(df["pickup_datetime"])
+                df["dropOff_datetime"] = pd.to_datetime(df["dropOff_datetime"])
+                df["SR_Flag"] = df["SR_Flag"].astype("Int64")
+                df["PUlocationID"] = df["PUlocationID"].astype("Int64")
+                df["DOlocationID"] = df["DOlocationID"].astype("Int64")
         else:
+            pass
             # performing this step as in Bigquery when
             # creating external table, vendorid is stored
             # as float and casting it to int throws error
@@ -107,24 +114,13 @@ def web_to_gcs(year, service):
             # caused an issue with the macro case statement.
             # I have to specify the dtype for each field as shown
             # above in the if-statement
-            dataset_url = out_path
-            df = pd.read_parquet(dataset_url)
-            for col in df.columns:
-                df[col] = df[col].astype(str)
-        # if service == "fhv":
-        #     df["pickup_datetime"] = pd.to_datetime(df["pickup_datetime"])
-        #     df["dropOff_datetime"] = pd.to_datetime(df["dropOff_datetime"])
-        #     df["SR_Flag"] = df["SR_Flag"].astype("Int64")
-        #     df["PUlocationID"] = df["PUlocationID"].astype("Int64")
-        #     df["DOlocationID"] = df["DOlocationID"].astype("Int64")
-        # elif service == "yellow":
-        #     df["tpep_pickup_datetime"] = pd.to_datetime(df["tpep_pickup_datetime"])
-        #     df["tpep_dropoff_datetime"] = pd.to_datetime(df["tpep_dropoff_datetime"])
-        # elif service == "green":
-        #     df["lpep_pickup_datetime"] = pd.to_datetime(df["lpep_pickup_datetime"])
-        #     df["lpep_dropoff_datetime"] = pd.to_datetime(df["lpep_dropoff_datetime"])
+            # dataset_url = out_path
+            # df = pd.read_parquet(dataset_url)
+            # for col in df.columns:
+            #     df[col] = df[col].astype(str)
         # pa_table = pa.Table.from_pandas(df, schema=schema)
         # pq.write_table(pa_table, out_path)
+        
         df.to_parquet(out_path, engine="pyarrow")
 
         
