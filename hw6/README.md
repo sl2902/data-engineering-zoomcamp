@@ -1,5 +1,7 @@
 # Steps to run the Kafka application
 
+After cloning the repository
+
 Start the virtual enviroment
 ```
 pipenv shell
@@ -7,7 +9,7 @@ pipenv shell
 
 Install the requirements
 ```
-pipenv install -r requirements.txt
+pipenv sync
 ```
 
 Create Docker network.
@@ -35,7 +37,7 @@ python consumer.py
 
 Ctrl-C to stop both the producer and consumer
 
-Other CLIs
+# Other CLIs
 
 To create a topic on the CLI
 ```
