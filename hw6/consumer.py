@@ -27,8 +27,13 @@ class JsonConsumer:
                         # if rides.topic == "fhv_rides":
                         #     print(pd.DataFrame(rides.value).columns)
                         ride = pd.DataFrame(rides.value)
-                        print(ride.columns)
-                        print(ride['Zone'].value_counts())
+                        if rides.topic == "green_rides":
+                            print(ride["PULocationID"].value_counts())
+                        elif rides.topic == "fhv_rides":
+                            print(ride["PUlocationID"].value_counts())
+                        else:
+                            raise ValueError("Invalid message consumed")
+                            print(ride['Zone'].value_counts())
             except KeyboardInterrupt:
                 break
 
@@ -39,7 +44,7 @@ if __name__ == '__main__':
     config = {
         'bootstrap_servers': BOOTSTRAP_SERVERS,
         'auto_offset_reset': 'earliest',
-        'enable_auto_commit': False,
+        'enable_auto_commit': True,
         'key_deserializer': lambda key: int(key.decode('utf-8')),
         'value_deserializer': lambda x: loads(x.decode('utf-8')),
         'group_id': 'consumer.group.id.taxi.1',
