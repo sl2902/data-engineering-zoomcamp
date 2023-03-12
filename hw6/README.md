@@ -75,3 +75,5 @@ To run Kafka on Spark, follow instructions [here](https://github.com/DataTalksCl
 
 For `green_rides`, in the first few partitions, PuLocationID 72 and 41 appear to occur more frequently. Whereas, for the `fhv_rides`
 they are 48 and 138
+
+<img width="415" alt="image" src="https://user-images.githubusercontent.com/7212518/224567776-81434218-07a6-46f0-b3ad-749fe7fb14d3.png">
