@@ -70,3 +70,10 @@ docker volume rm $(docker volume ls -q)
 ```
 
 To run Kafka on Spark, follow instructions [here](https://github.com/DataTalksClub/data-engineering-zoomcamp/tree/main/week_6_stream_processing/python/docker)
+
+## Output from the application
+
+For `green_rides`, in the first few partitions, PuLocationID 72 and 41 appear to occur more frequently. Whereas, for the `fhv_rides`
+they are 48 and 138
+
+image.png
