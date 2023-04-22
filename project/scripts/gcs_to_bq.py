@@ -191,7 +191,7 @@ if __name__ == "__main__":
     PROJECT_ID = os.environ.get("GCP_PROJECT_ID")
 
     parser = argparse.ArgumentParser("Pipeline to read from GCS and write to BigQuery")
-    parser.add_argument("--date", type=str, help="Enter period of load. Format yyyy-mm-dd", default="2022-04-25")
+    parser.add_argument("--date", type=str, help="Enter period of load. Format yyyy-mm-dd", default="2022-03-25")
 
     args = parser.parse_args()
     if args.date:
