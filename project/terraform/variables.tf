@@ -1,6 +1,7 @@
 # passed in by env vars (TF_VAR)
 variable "GCP_PROJECT_ID" {}
 variable "GCP_REGION" {}
+variable "GCP_COMPUTE_ENGINE_REGION" {}
 # variable "GCP_DATASET_NAME" {}
 variable "COMPUTE_ENGINE_NAME" {}
 variable "COMPUTE_ENGINE_MACHINE_TYPE" {}
